@@ -24,7 +24,15 @@
       ],
       "properties": {
         "process_id": {
-          "$ref": "#/definitions/process_id"
+          "type": "string",
+          "pattern": "^\\w+$"
+        },
+        "namespace": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
         },
         "result": {
           "type": "boolean",
@@ -58,7 +66,7 @@
           "type": "object",
           "title": "Object",
           "properties": {
-            "from_argument": {
+            "from_parameter": {
               "not": {}
             },
             "from_node": {
@@ -127,11 +135,6 @@
           }
         }
       ]
-    },
-    "process_id": {
-      "type": "string",
-      "subtype": "process-id",
-      "pattern": "^[A-Za-z0-9_]+$"
     }
   }
 }
