@@ -56,11 +56,11 @@ For example, temporal labels are usually encoded as [ISO 8601](https://en.wikipe
 
 Dimensions with a natural/inherent order (usually all temporal and spatial raster dimensions) are always sorted. Dimensions without inherent order (usually `bands`), retain the order in which they have been defined in metadata or processes (e.g. through [`filter_bands`](https://processes.openeo.org/#filter_bands)), with new labels simply being appended to the existing labels.
 
-A geometry dimension is not included in the example raster datacube above and it is not used in the following examples, but to show how a vector dimension with two polygons could look like:
+A geometry dimension is not included in the example raster datacube above and it is not used in the following examples, but to show how a geometry dimension with two polygons could look like:
 
-| name       | type   | labels | reference system |
-| ---------- | ------ | ------ | ---------------- | 
-| `geometry` | vector | `POLYGON((-122.4 37.6,-122.35 37.6,-122.35 37.64,-122.4 37.64,-122.4 37.6))`, `POLYGON((-122.51 37.5,-122.48 37.5,-122.48 37.52,-122.51 37.52,-122.51 37.5))` | [EPSG:4326](https://epsg.io/4326) |
+| name       | type     | labels | reference system |
+| ---------- | -------- | ------ | ---------------- | 
+| `geometry` | geometry | `POLYGON((-122.4 37.6,-122.35 37.6,-122.35 37.64,-122.4 37.64,-122.4 37.6))`, `POLYGON((-122.51 37.5,-122.48 37.5,-122.48 37.52,-122.51 37.52,-122.51 37.5))` | [EPSG:4326](https://epsg.io/4326) |
 
 A dimension with geometries can consist of points, linestrings, polygons, multi points, multi linestrings, or multi polygons.
 It is not possible to mix geometry types, but the single geometry type with their corresponding multi type can be combined in a dimension (e.g. points and multi points).
